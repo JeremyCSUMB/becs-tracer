@@ -13,7 +13,7 @@ print(title)
 
 const vars = sim.add(0, 3, new Frame())
 yield sim.start(state)
-vars.str = yield sim.ask('BECS','Enter the string \'BECS\':')
+vars.str = yield sim.ask(undefined,'Enter a string:')
 code.go(2)
 const term = sim.add(0,6, new Terminal())
 term.println(vars.str)
