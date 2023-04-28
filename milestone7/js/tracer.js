@@ -3,8 +3,7 @@
     addExercise(function*(sim, state) {
     
     if (state === undefined) { 
-      state = {}
-      state.i = sim.randInt(1,30)
+      state = {i: sim.randInt(1,30)}
     }
     
     const code = sim.add(0, 0, new Code(`
@@ -12,10 +11,16 @@
     while (i < ${state.i + 5}):
       print(i)
     `))
-    const vars = sim.add(0, 5, new Frame())
+
+    const vars = sim.add(0, 2, new Frame())
+    vars.i = state.i
     yield sim.start(state)
-    while (vars.i < vars.i+5) {
+    code.go(2)
+    while (vars.i < 15) {
       yield code.ask()
+      code.go(3)
+      yield sim.set(vars.i, vars.i+1)
+      code.go(2)
     }
     })
     // ]]>
