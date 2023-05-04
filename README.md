@@ -1,6 +1,6 @@
-# BECS Tracer
-
-![Image of BECS Tracer Logo](/img/becs-tracer-logo.png)
+<p align="center">
+  <img src="/img/becs-tracer-logo.png" alt="Image of BECS Tracer Logo">
+</p>
 
 ## Table of Contents
 - [Introduction](#introduction)
